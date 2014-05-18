@@ -73,11 +73,15 @@
 					</ul>
 				</section>
 
+				<section>
+					<h1>Fo</h1>
+				</section>
+
 				<section class="center">
 					<h1>The History</h1>
-					Safari 2007
-					Spec 2009
-
+					<p class="fragment" data-fragment-index="1">Safari 2007</p>
+					<p class="fragment" data-fragment-index="2">Spec 2009</p>
+					<p class="fragment" data-fragment-index="3">Pushed by Apple</p>
 				</section>
 
 				<section class="center">
@@ -85,46 +89,67 @@
 					<img src="content/images/flash_updater.jpg" alt="">
 				</section>
 
-				<section>
-					Hover
-					
+				<section class="center">
+					<h1>Apple's Choice</h1>
+
+					<blockquote>Rather than use Flash, Apple has adopted HTML5, CSS and JavaScript – all open standards. Apple’s mobile devices all ship with high performance, low power implementations of these open standards</blockquote>
+					<cite>-Steve Jobs</cite>
+					<p class="small">Source - <a href="http://www.apple.com/hotnews/thoughts-on-flash/" target="_blank">http://www.apple.com/hotnews/thoughts-on-flash/</a></p>
 				</section>
 
 				<section>
-					<h1>A slide with some HTML Code</h1>
+					<h1>Hover Pseudo Class Selectors</h1>
 					<pre><code>
-<!-- remember to escape the < character -->
-&lt;!doctype html>
-&lt;head>
-  &lt;title>Ladies Learning Code HTML and CSS&lt;/title>
-  &lt;style>
-    p {
-    color: red;
-    text-decoration: underline;
-    }
-  &lt;/style>
-&lt;/head>
-&lt;body>
-  &lt;p>This is a paragraph&lt;/p>
-&lt;/body>
-&lt;/html>
+div {
+	background-color: #1BA0FF;
+}
+
+div:hover {
+	background-color: #3DF2C6;
+}
+					</code></pre>
+					<div class="hover-example"></div>
+				</section>
+
+				<section>
+					<h1>CSS3 Transitions</h1>
+					<p>The simplest type of animation</p>
+					<div class="fragment" data-fragment-index="1">
+						
+					<p>Apply the transition property on the element</p>
+					<pre><code>
+div {
+	background-color: #1BA0FF;
+	transition: all 1s ease;
+}
+
+div:hover {
+	background-color: #3DF2C6;	
+}
+					</code></pre>
+					<div class="transition-example"></div>
+
+					</div>
+				</section>
+
+				<section>
+					<p>Lets add some transitions to the menu on your site!</p>
+					<pre><code>
+.menu li {
+	display: inline-block;
+	padding: 20px 35px;
+	transition: all 0.5s ease; /* Add transition */
+}
+.menu li:hover {
+	/* Add the hover state to transition too */
+ 	background-color: #A8258D; 
+}
+.menu li:hover a {
+	color: #ffffff; /* Lets also change the font color */
+}
 					</code></pre>
 				</section>
 
-				<section data-markdown>
-					# You can write your slides in mardown if you add the `data-markdown` attribute
-
-					- markdown makes it a bit easier to write content for the web
-					- learn more about [markdown syntax](https://daringfireball.net/projects/markdown/syntax)
-
-					## A level 2 header in markdown
-
-					```
-						\\ some code in markdown
-					```
-				</section>
-
-				<!-- end editable section -->
 
 			</div>
 
