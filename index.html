@@ -138,7 +138,7 @@ div:hover {
 .menu li {
 	display: inline-block;
 	padding: 20px 35px;
-	transition: all 0.5s ease; /* Add transition */
+	transition: all 1s ease; /* Add transition */
 }
 .menu li:hover {
 	/* Add the hover state to transition too */
@@ -149,7 +149,34 @@ div:hover {
 }
 					</code></pre>
 				</section>
-
+				<section class="center">
+					<h2>Transition options</h2>
+					<pre><code class="css">
+/* Short hand syntax */
+transition: &lt;property> &lt;duration> &lt;timing-function> &lt;delay>;					
+transition: all 1s ease;
+/* Can also be written like this */
+transition-property: all;
+transition-duration: 1s;
+transition-timing-function: ease;
+					</code></pre>
+				</section>
+				<section>
+					<h2>Timing</h2>
+					<ul>
+						<li>linear</li>
+						<li>ease</li>
+						<li>ease-in</li>
+						<li>ease-in-out</li>
+						<li>ease-out</li>
+						<li>step-start</li>
+						<li>step-end</li>
+					</ul>
+				</section>
+				<section class="center">
+					<img src="content/images/ease.png" alt="">
+					<img src="content/images/ease-in.png" alt="">
+				</section>
 
 			</div>
 
