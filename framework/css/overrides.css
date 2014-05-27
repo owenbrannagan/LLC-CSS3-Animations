@@ -5,6 +5,7 @@
 .reveal .small {
 	font-size:  14px;
 }
+/* Hover and transition example */
 .reveal .hover-example,
 .reveal .transition-example {
 	width: 20%;
@@ -17,4 +18,34 @@
 .reveal .hover-example:hover,
 .reveal .transition-example:hover {
 	background-color: #3DF2C6;
+}
+/* Keyframe Example */
+.reveal .keyframe-example {
+	width: 200px;
+	height: 200px;
+	background-color: #1A6373;
+	display: inline-block; 
+}
+.reveal .keyframe-example:hover {
+	-webkit-animation: example 5s infinite;
+}
+@-webkit-keyframes example {
+	0% {
+		-webkit-transform: scale(1);
+	}
+	25% {
+		-webkit-transform: scale(3);
+	}
+	50% {
+		-webkit-transform: rotate(10deg) scale(3);
+	}
+	55% {
+		-webkit-tranform: rotate(0deg) scale(2);
+	}
+	60% {
+		-webkit-transform: rotate(-10deg) scale(2);
+	}
+	100% {
+		-webkit-transform: scale(1);
+	}
 }

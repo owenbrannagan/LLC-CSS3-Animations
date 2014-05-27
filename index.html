@@ -194,7 +194,7 @@ div {
 
 				<section>
 					<h2>The Vendor Prefixes</h2>
-					<p>Because CSS3 animations are so new broswers have implemented features differently.</p>
+					<p>Because CSS3 animations are so new, broswers have implemented features differently.</p>
 					<ul>
 						<li>-webkit-transform</li>
 						<li>-moz-transform</li>
@@ -208,7 +208,59 @@ div {
 					<img src="content/images/caniuse.png" alt="">
 					<p><a href="http://caniuse.com/" target="_blank">caniuse.com</a></p>
 				</section>
+				<section >
+					<h2>Keyframes</h2>
+					<p>Lets look at how you can really specify your animations</p>
+					<div class="keyframe-example"></div>
+				</section>
+				<section>
+					<p>With Keyframes you are able to control what happen throughout the life cycle of your animation. Lets look at the syntax.</p>
+					<p>First you add the animation to the element.</p>
+					<pre class="fragment" data-fragment-index="1"><code>
+#box {
+	animation: &lt;name> &lt;duration> &lt;iteration-count>;
+}
+					</code></pre>
+					<p class="fragment" data-fragment-index="2">Then you add then create you animation.</p>
+					<pre class="fragment" data-fragment-index="2"><code>
+@-webkit-animation &lt;name> {
+	0% {
+		/* Some properties */
+	}
+	100% {
+		/* Some properties */
+	}
+}
+					</code></pre>
+				</section>
+				<section>
+					<p>Working example</p>
+					<pre><code>
+.reveal .keyframe-example {
+	width: 200px;
+	height: 200px;
+	background-color: #1A6373;
+	display: inline-block; 
+}
 
+.reveal .keyframe-example:hover {
+	-webkit-animation: example 5s infinite;
+}
+					</code></pre>
+				</section>
+				<section>
+					<pre><code>
+@-webkit-keyframes example {
+	0% { -webkit-transform: scale(1); }
+	25% { -webkit-transform: scale(3); }
+	50% { -webkit-transform: rotate(10deg) scale(3); }
+	55% { -webkit-tranform: rotate(0deg) scale(2); }
+	60% { -webkit-transform: rotate(-10deg) scale(2); }
+	100% { -webkit-transform: scale(1); }
+}					
+					</code></pre>
+					<div class="keyframe-example"></div>
+				</section>
 			</div>
 
 		</div>
