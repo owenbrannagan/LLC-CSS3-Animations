@@ -111,6 +111,29 @@
       text-transform: uppercase;
       font-family: 'Oswald', sans-serif;
     }
+    .logo:hover {
+      -webkit-animation: logo-animation 3s infinite;
+    }
+    @-webkit-keyframes logo-animation {
+      0% {
+        -webkit-transform: scale(1);
+      }
+      50% {
+        -webkit-transform: scale(2) rotate(90deg);
+      }
+      100% {
+        -webkit-transform: scale(1);
+      }
+    }
+    .favourite {
+      transition: all 1s ease;
+     // -webkit-perspective: 500px;
+      -webkit-transform: rotateY(40deg);
+    }
+    .favourite:hover {
+      -webkit-transform: rotateY(0deg);
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>

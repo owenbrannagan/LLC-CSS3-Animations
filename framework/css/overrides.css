@@ -2,8 +2,17 @@
 .reveal blockquote {
 	width: 100%;
 }
+.reveal pre {
+	width: 100%;
+}
 .reveal .small {
 	font-size:  14px;
+}
+.reveal .inline-container {
+	display: inline-block;
+}
+.reveal .inline-container.two-col {
+	width: 49%;
 }
 /* Hover and transition example */
 .reveal .hover-example,
@@ -48,4 +57,21 @@
 	100% {
 		-webkit-transform: scale(1);
 	}
+}
+.reveal .transform-example {
+	height: 100px;
+	width: 100px;
+	background-color: #1A6373;
+}
+.reveal .transform-example.skewX{
+	-webkit-transform: skewX(10deg);
+}
+.reveal .transform-example.skewY{
+	-webkit-transform: skewY(10deg);
+}
+.reveal .transform-example.rotate{
+	-webkit-transform: rotate(30deg);
+}
+.reveal .transform-example.translate{
+	-webkit-transform: translate(100px,-50px);
 }

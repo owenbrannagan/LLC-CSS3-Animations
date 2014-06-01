@@ -97,11 +97,11 @@
 					<h1>Hover Pseudo Class Selectors</h1>
 					<pre><code>
 div {
-	background-color: #1BA0FF;
+    background-color: #1BA0FF;
 }
 
 div:hover {
-	background-color: #3DF2C6;
+    background-color: #3DF2C6;
 }
 					</code></pre>
 					<div class="hover-example"></div>
@@ -115,12 +115,12 @@ div:hover {
 					<p>Apply the transition property on the element</p>
 					<pre><code>
 div {
-	background-color: #1BA0FF;
-	transition: all 1s ease;
+    background-color: #1BA0FF;
+    transition: all 1s ease;
 }
 
 div:hover {
-	background-color: #3DF2C6;	
+    background-color: #3DF2C6;	
 }
 					</code></pre>
 					<div class="transition-example"></div>
@@ -132,19 +132,20 @@ div:hover {
 					<p>Lets add some transitions to the menu on your site!</p>
 					<pre><code>
 .menu li {
-	display: inline-block;
-	padding: 20px 35px;
-	transition: all 1s ease; /* Add transition */
+    display: inline-block;
+    padding: 20px 35px;
+    transition: all 1s ease; /* Add transition */
 }
 .menu li:hover {
-	/* Add the hover state to transition too */
- 	background-color: #A8258D; 
+    /* Add the hover state to transition too */
+    background-color: #A8258D; 
 }
 .menu li:hover a {
-	color: #ffffff; /* Lets also change the font color */
+    color: #ffffff; /* Lets also change the font color */
 }
 					</code></pre>
 				</section>
+
 				<section class="center">
 					<h2>Transition options</h2>
 					<pre><code class="css">
@@ -157,6 +158,7 @@ transition-duration: 1s;
 transition-timing-function: ease;
 					</code></pre>
 				</section>
+
 				<section>
 					<h2>Timing</h2>
 					<ul>
@@ -169,38 +171,64 @@ transition-timing-function: ease;
 						<li>step-end</li>
 					</ul>
 				</section>
+
 				<section class="center">
 					<h2>Curves</h2>
-					<img src="content/images/ease.png" alt="">
-					<img src="content/images/ease-in.png" alt="">
+					<div class="inline-container">
+						<img src="content/images/ease.png" alt="">
+						<p>Ease</p>
+					</div>
+					<div class="inline-container">
+						<img src="content/images/ease-in.png" alt="">
+						<p>Ease-in</p>
+					</div>
+					<div class="inline-container">
+						<img src="content/images/ease-out.png" alt="">
+						<p>Ease-out</p>
+					</div>
 				</section>
-	
+				
+				<section class="center">
+					<h1>Try it out</h1>
+				</section>
+
 				<section>
 					<h2>2d Transforms</h2>
 					<p>Transform is another property you can us the transition on, lets look at some of the 2D transforms we can use:</p>
 					<ul>
-						<li>translate()</li>
-						<li>rotate()</li>
-						<li>scale()</li>
-						<li>skew()</li>
+						<li><code>translate()</code></li>
+						<li><code>rotate()</code></li>
+						<li><code>scale()</code></li>
+						<li><code>skewX()</code></li>
+						<li><code>skewY()</code></li>
 					</ul>
 					<p>Use:</p>
 					<pre><code>
 div {
-	transform: scale(2);
+    -webkit-transform: scale(2);
 }
 					</code></pre>
 				</section>
 
 				<section>
-					<h2>The Vendor Prefixes</h2>
+					<h2>Vendor Prefixes</h2>
 					<p>Because CSS3 animations are so new, broswers have implemented features differently.</p>
 					<ul>
-						<li>-webkit-transform</li>
-						<li>-moz-transform</li>
-						<li>-ms-transform</li>
-						<li>-o-transform</li>
+						<li><code>-webkit-transform</code></li>
+						<li><code>-moz-transform</code></li>
+						<li><code>-ms-transform</code></li>
 					</ul>
+					<p class="small">For the our purposes we will only need -webkit-transform</p>
+					<p>In the wild you would make sure that you apply all prefixes need.</p>
+					<pre><code>
+div {
+    -webkit-transform: scale(2); /* Chrome, Safari, Opera */
+    -moz-transform: scale(2); /* Firefox */
+    -ms-transform: scale(2); /* Internet Explorer */
+    /* Added so taht this will continue to work in the future */
+    transfom: scale(2); 
+}
+					</code></pre>
 				</section>
 
 				<section>
@@ -208,59 +236,192 @@ div {
 					<img src="content/images/caniuse.png" alt="">
 					<p><a href="http://caniuse.com/" target="_blank">caniuse.com</a></p>
 				</section>
-				<section >
+
+				<section>
+					<h2>Transform examples</h2>
+					<div class="inline-container fragment two-col" data-fragment-index="1">
+						<p>skewX</p>
+						<pre><code>
+div {
+    transform: skewX(10deg);
+}
+						</code></pre>
+						<div class="transform-example skewX"></div>
+						<p>skewY</p>
+						<pre><code>
+div {
+    transform: skewY(10deg);
+}
+						</code></pre>
+						<div class="transform-example skewY"></div>
+					</div>
+
+					<div class="inline-container fragment two-col" data-fragment-index="2">
+						<p>rotate</p>
+						<pre><code>
+div {
+    transform: rotate(30deg);
+}
+						</code></pre>
+						<div class="transform-example rotate"></div>
+						<p>translate</p>
+						<pre><code>
+div {
+    transform: translate(100px, -50px);
+}
+						</code></pre>
+						<div class="transform-example translate"></div>
+					</div>
+				</section>
+
+				<section>
 					<h2>Keyframes</h2>
 					<p>Lets look at how you can really specify your animations</p>
 					<div class="keyframe-example"></div>
 				</section>
+
 				<section>
 					<p>With Keyframes you are able to control what happen throughout the life cycle of your animation. Lets look at the syntax.</p>
-					<p>First you add the animation to the element.</p>
-					<pre class="fragment" data-fragment-index="1"><code>
+					<div class="fragment" data-fragment-index="1">
+						<p>First you add the animation to the element.</p>
+						<pre><code>
 #box {
-	animation: &lt;name> &lt;duration> &lt;iteration-count>;
+    animation: &lt;name> &lt;duration> &lt;iteration-count>;
 }
-					</code></pre>
-					<p class="fragment" data-fragment-index="2">Then you add then create you animation.</p>
+						</code></pre>
+						<p class="small">We will have to use -webkit-animation in chrome</p>
+						
+					</div>
+					<p class="fragment" data-fragment-index="2">Then you add then define your animation.</p>
 					<pre class="fragment" data-fragment-index="2"><code>
 @-webkit-animation &lt;name> {
-	0% {
-		/* Some properties */
-	}
-	100% {
-		/* Some properties */
-	}
+    0% {
+        /* Some properties */
+    }
+    100% {
+        /* Some properties */
+    }
 }
 					</code></pre>
 				</section>
+
 				<section>
 					<p>Working example</p>
 					<pre><code>
 .reveal .keyframe-example {
-	width: 200px;
-	height: 200px;
-	background-color: #1A6373;
-	display: inline-block; 
+    width: 200px;
+    height: 200px;
+    background-color: #1A6373;
+    display: inline-block; 
 }
 
 .reveal .keyframe-example:hover {
-	-webkit-animation: example 5s infinite;
+    -webkit-animation: example 5s infinite;
 }
 					</code></pre>
 				</section>
+
 				<section>
 					<pre><code>
 @-webkit-keyframes example {
-	0% { -webkit-transform: scale(1); }
-	25% { -webkit-transform: scale(3); }
-	50% { -webkit-transform: rotate(10deg) scale(3); }
-	55% { -webkit-tranform: rotate(0deg) scale(2); }
-	60% { -webkit-transform: rotate(-10deg) scale(2); }
-	100% { -webkit-transform: scale(1); }
+    0% { -webkit-transform: scale(1); }
+    25% { -webkit-transform: scale(3); }
+    50% { -webkit-transform: rotate(10deg) scale(3); }
+    55% { -webkit-tranform: rotate(0deg) scale(2); }
+    60% { -webkit-transform: rotate(-10deg) scale(2); }
+    100% { -webkit-transform: scale(1); }
 }					
 					</code></pre>
 					<div class="keyframe-example"></div>
 				</section>
+
+				<section>
+					<p>Some of the properties you can use in an animation</p>
+					<ul>
+						<li><code>transform</code></li>
+						<li><code>height</code></li>
+						<li><code>width</code></li>
+						<li><code>margin</code></li>
+						<li><code>padding</code></li>
+						<li><code>top</code></li>
+						<li><code>bottom</code></li>
+					</ul>
+					<p>That is just a few, for a complete list look <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties" target="_blank">HERE.</a></p>
+				</section>
+
+				<section>
+					<p>Lets add an animation your the logo in your project.</p>
+					<p>First set the animation on the element.</p>
+					<div class="fragment" data-fragment-index="1">
+						<pre><code>
+.logo:hover {
+    -webkit-animation: logo-animation 3s infinite;
+}
+
+						</code></pre>
+						<p class="small">Remember we need to use the <code>-webkit-</code> prefix on animation</p>
+					</div>
+					<div class="fragment" data-fragement-index="2">
+						<p>Then define the animation.</p>
+						<pre><code>
+@-webkit-keyframes logo-animation {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(2) rotate(90deg);
+    }
+    100% {
+        -webkit-transform: scale(1);
+    }
+}
+						</code></pre>
+					</div>
+				</section>
+
+				<section class="center">
+					<h1>Try it out</h1>
+					<p>Play around with animating different properties.</p>
+					<ul>
+						<li><code>transform</code>
+							<ul>
+								<li><code>scale()</code></li>
+								<li><code>rotate()</code></li>
+								<li><code>translate()</code></li>
+							</ul>
+						</li>
+						<li><code>height</code></li>
+						<li><code>width</code></li>
+						<li>etc...</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>3D transforms</h2>
+					<p>Using the <code>transform</code> property we can create 3D effects</p>
+					<p>We can use the same functions to tranform our elements as before. With one small addition, the <code>perspective</code> property.</p>
+					<pre><code>
+div {
+	perspective: 500px;
+}
+
+div {
+	transform: perspective(500px);
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>3D functions</h2>					
+					<ul>
+						<li><code>rotateY()</code></li>
+						<li><code>rotateX()</code></li>
+						<li><code>rotateZ()</code></li>
+						<li><code>translateZ()</code></li>
+						<li><code>scaleZ()</code></li>
+					</ul>
+				</section>
+
 			</div>
 
 		</div>
