@@ -124,7 +124,6 @@ div:hover {
 					</code></pre>
 					<div class="transition-example"></div>
 
-					</div>
 				</section>
 
 				<section>
@@ -187,6 +186,40 @@ transition-timing-function: ease;
 					</div>
 				</section>
 				
+				<section>
+					<div class="inline-container two-col">
+						<p>ease</p>
+						<pre><code>
+div {
+    transition: all 4s ease;
+}
+						</code></pre>
+						<div class="ease-container">
+							<div class="ease-example regular"></div>
+						</div>
+						<p>ease-in</p>
+						<pre><code>
+div {
+    transition: all 4s ease-in;
+}
+						</code></pre>
+						<div class="ease-container">
+							<div class="ease-example in"></div>
+						</div>
+					</div>
+					<div class="inline-container two-col">
+						<p>ease-out</p>
+						<pre><code>
+div {
+    transition: all 4s ease-out;
+}
+						</code></pre>
+						<div class="ease-container">
+							<div class="ease-example out"></div>
+						</div>
+					</div>
+				</section>
+
 				<section class="center">
 					<h1>Try it out</h1>
 					<p>Try tansitioning between various properties</p>
@@ -194,7 +227,7 @@ transition-timing-function: ease;
 
 				<section>
 					<h2>2d Transforms</h2>
-					<p>Transform is another property you can us the transition on, lets look at some of the 2D transforms we can use:</p>
+					<p>Transform is another property you can use the <code>transition</code> on, lets look at some of the 2D transforms we can use:</p>
 					<ul>
 						<li><code>translate()</code></li>
 						<li><code>rotate()</code></li>
@@ -225,7 +258,7 @@ div {
     -webkit-transform: scale(2); /* Chrome, Safari, Opera */
     -moz-transform: scale(2); /* Firefox */
     -ms-transform: scale(2); /* Internet Explorer */
-    /* Added so taht this will continue to work in the future */
+    /* Added so that this will continue to work in the future */
     transfom: scale(2); 
 }
 					</code></pre>
@@ -286,15 +319,14 @@ div {
 						<p>First you add the animation to the element.</p>
 						<pre><code>
 #box {
-    animation: &lt;name> &lt;duration> &lt;iteration-count>;
+    -webkit-animation: &lt;name> &lt;duration> &lt;iteration-count>;
 }
 						</code></pre>
-						<p class="small">We will have to use -webkit-animation in chrome</p>
-						
+					
 					</div>
 					<p class="fragment" data-fragment-index="2">Then you add then define your animation.</p>
 					<pre class="fragment" data-fragment-index="2"><code>
-@-webkit-animation &lt;name> {
+@-webkit-keyframes &lt;name> {
     0% {
         /* Some properties */
     }
@@ -308,14 +340,14 @@ div {
 				<section>
 					<p>Working example</p>
 					<pre><code>
-.reveal .keyframe-example {
+.keyframe-example {
     width: 200px;
     height: 200px;
     background-color: #1A6373;
     display: inline-block; 
 }
 
-.reveal .keyframe-example:hover {
+.keyframe-example:hover {
     -webkit-animation: example 5s infinite;
 }
 					</code></pre>
@@ -357,9 +389,7 @@ div {
 .logo:hover {
     -webkit-animation: logo-animation 3s infinite;
 }
-
 						</code></pre>
-						<p class="small">Remember we need to use the <code>-webkit-</code> prefix on animation</p>
 					</div>
 					<div class="fragment" data-fragement-index="2">
 						<p>Then define the animation.</p>
@@ -399,17 +429,43 @@ div {
 				<section>
 					<h2>3D transforms</h2>
 					<p>Using the <code>transform</code> property we can create 3D effects</p>
-					<p>We can use the same functions to tranform our elements as before. With one small addition, the <code>perspective</code> property.</p>
-					<p>The <code>perspective</code> property added the element into a 3D context</p>
+					<p>We can use the same functions to tranform our elements as before. With one small addition, the <code>perspective</code> property. This is applied to the parent container</p>
+					<p>The <code>perspective</code> property adds the element into a 3D context</p>
 					<pre><code>
 div {
-	perspective: 500px;
+    perspective: 500px;
 }
 
 div {
-	transform: perspective(500px);
+    transform: perspective(500px);
 }
 					</code></pre>
+				</section>
+
+				<section>
+					<h2>Persepctive Examples</h2>
+					<div class="inline-container two-col">
+						<pre><code>
+div {
+    -webkit-perspective: 100px;
+}
+						</code></pre>
+						<div class="perspective-container small">
+							<div class="perspective-small-example perspective-example"></div>
+						</div>
+						
+					</div>
+					<div class="inline-container two-col">
+						
+						<pre><code>
+div {
+    -webkit-perspective: 600px;
+}
+						</code></pre>
+						<div class="perspective-container large">
+							<div class="perspective-large-example perspective-example"></div>
+						</div>
+					</div>
 				</section>
 
 				<section>
@@ -555,11 +611,27 @@ div {
 					</code></pre>
 				</section>
 
+				<section class="center">
+					<h1>Try it out.</h1>
+					<p>If you have time, try adding some animations to your social icons</p>
+				</section>
+
+				<section>
+					<h2>Recap</h2>
+					<p>We looked at simple animations for <code>transitions</code> and the properties that can be transitioned on.</p>
+					<p>After that we looked at <code>transforms</code> and using <code>keyframes</code> to create specific animations</p>
+					<p>Then we used <code>transform</code> to create a 3D effect.</p>
+				</section>
+
 				<section>
 					<h2>Links to check out</h2>
 					<p><a href="http://tympanus.net/codrops/" target="_blank">tympanus.net/codrops</a></p>
 					<p><a href="http://codepen.io/" target="_blank">codepen.io</a></p>
 					<p><a href="http://desandro.github.io/3dtransforms/" target="_blank">Intro to 3D tranforms</a></p>
+				</section>
+
+				<section class="center">
+					<h1>Thank You</h1>
 				</section>
 			</div>
 
