@@ -14,6 +14,47 @@
 .reveal .inline-container.two-col {
 	width: 49%;
 }
+/* Intro Cube */
+.cube-container {
+	-webkit-perspective: 800px;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: rotateY(90deg);
+	height: 300px;
+	width: 300px;
+	position: relative;
+	left: 150px;
+}
+.cube-side {
+	height: 200px;
+	width: 200px;
+	background-color: #222222;
+	position: absolute;
+	-webkit-backface-visibility: visible;
+}
+.cube-front {
+	-webkit-transform: translateZ(100px) rotateY(0deg);
+	background-color: red;
+}
+.cube-back {
+	-webkit-transform: translateZ(100px) rotateY(180deg);
+	background: blue;
+}
+.cube-side1 {
+	-webkit-transform: translateZ(100px) rotateY(90deg);
+	background-color: green;
+}
+.cube-side2 {
+	-webkit-transform: translateZ(100px) rotateY(-90deg);
+	background-color: black;
+}
+.cube-top {
+	-webkit-transform: -webkit-translateZ(100px) rotateX(-90deg);
+	background-color: yellow;
+}
+.cube-bottom {
+	-webkit-transform: translateZ(100px) rotateZ(90deg);
+	background-color: purple;
+}
 /* Hover and transition example */
 .reveal .hover-example,
 .reveal .transition-example {
@@ -74,4 +115,50 @@
 }
 .reveal .transform-example.translate{
 	-webkit-transform: translate(100px,-50px);
+}
+.reveal .transform-rotatex-example {
+	-webkit-perspective: 500px;
+	-webkit-transform: rotateX(50deg);
+}
+.reveal .transform-rotatey-example {
+	-webkit-perspective: 500px;
+	-webkit-transform: rotateY(50deg);
+}
+.reveal .transform-translatez-example {
+	-webkit-perspective: 500px;
+	-webkit-transform: translateZ(100px);
+}
+.reveal .transform-scalez-example {
+	-webkit-perspective: 500px;
+	-webkit-transform: scaleZ(100px);
+}
+.reveal .flip-container {
+	position: relative;
+	height: 250px;
+	width: 150px;
+}
+.reveal .flip-container .item {
+	width: 100%;
+	height: 100%;
+	-webkit-transform: rotateY(0deg);
+    -webkit-transform-style: preserve-3d;   
+	transition: all 0.5s ease;
+}
+.reveal .flip-container:hover .item {
+	-webkit-transform: rotateY(180deg);
+}
+.reveal .flip-container .front {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	-webkit-transform: translateZ(1px);
+	-webkit-backface-visibility: hidden;
+}
+.reveal .flip-container .back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: red;
+	-webkit-transform: translateZ(-1px) rotateY(180deg);
 }

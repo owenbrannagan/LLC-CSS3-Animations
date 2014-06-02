@@ -39,7 +39,6 @@
 			<div class="slides">
 				<!-- begin editable section -->
 				<section class="center">
-					Some animation here
 				</section>
 
 				<!-- each <section> element creates a new slide. -->
@@ -190,6 +189,7 @@ transition-timing-function: ease;
 				
 				<section class="center">
 					<h1>Try it out</h1>
+					<p>Try tansitioning between various properties</p>
 				</section>
 
 				<section>
@@ -400,6 +400,7 @@ div {
 					<h2>3D transforms</h2>
 					<p>Using the <code>transform</code> property we can create 3D effects</p>
 					<p>We can use the same functions to tranform our elements as before. With one small addition, the <code>perspective</code> property.</p>
+					<p>The <code>perspective</code> property added the element into a 3D context</p>
 					<pre><code>
 div {
 	perspective: 500px;
@@ -421,7 +422,145 @@ div {
 						<li><code>scaleZ()</code></li>
 					</ul>
 				</section>
+				<section>
+					<h2>Examples</h2>
+					<div class="inline-container fragment two-col" data-fragment-index="2">
+						<p>rotateX</p>
+						<pre><code>
+div {
+    -webkit-perspective: 500px;
+    -webkit-transform: rotateX(20deg);
+}
+						</code></pre>
+						<div class="transform-rotatex-example transform-example"></div>
+							<p>rotateY</p>
+						<pre><code>
+div {
+    -webkit-perspective: 500px;
+    -webkit-transform: rotateY(20deg);
+}
+						</code></pre>
+						<div class="transform-rotatey-example transform-example"></div>
+					</div>
 
+					<div class="inline-container fragment two-col" data-fragment-index="2">
+						<p>translateZ</p>
+						<pre><code>
+div {
+    -webkit-perpsective: 500px;
+    -webkit-transform: translateZ(100px);
+}
+						</code></pre>
+						<div class="transform-translatez-example transform-example"></div>
+						<p>scaleZ</p>
+						<pre><code>
+div {
+    -webkit-perpspective: 500px;
+    -webkit-transform: scaleZ(100px);
+}
+						</code></pre>
+						<div class="transform-scalez-example transform-example"></div>
+					</div>
+				</section>
+				<section>
+					<p>Lets add a simple hover 3D transfrom to the Favorite things section</p>
+					<p>We will create a simple 3d flip for the Favourite things section</p>
+					<p>Example:</p>
+					<div class="flip-container">
+						<div class="item">
+							<div class="front"></div>
+							<div class="back"></div>	
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>The Steps</h2>
+					<p>Step 1:</p>
+					<pre ><code>
+&lt;div class="favourite-container"> <!-- A container to hold the front and back -->
+    &lt;div class="item"> <!-- The actual element that will rotate -->
+        &lt;div class="front">&lt;/div> <!-- Our front -->
+        &lt;img src="" alt=""> <!-- Exsisting image -->
+    &lt;/div>
+&lt;/div>
+					</code></pre>
+					<pre><code>
+.favourtie-container {
+    display: inline-block;
+}
+.favourite-container .item{
+    position: relative;
+    height: 212px;
+}
+					</code></pre>
+				</section>
+					
+				<section>
+					<p>Step 2:</p>
+					<pre><code>
+.item .front {
+    background-color: #A8258D;
+    height: 212px;  
+    width: 212px;
+    margin: 10px;
+    border-radius: 50%;
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<p>Step 3:</p>
+					<p>Lets add the 3D portion.</p>
+					<pre><code>
+.favourite-container .item{
+    position: relative;
+    height: 212px;
+    /* Add a transition */
+    transition: -webkit-transform 1s ease; 
+    /* Add element into 3D context */
+    -webkit-perspective: 600px; 
+    /* Needed to allow the two faces to rotate */
+    -webkit-transform-style: preserve-3d;   
+    /* Set the initial value to 0 */
+    -webkit-transform: rotateY(0deg);
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code>
+.item .favourite {
+    /* Rotate the image to the back and translate it behind */
+    -webkit-transform: translateZ(-1px) rotateY(180deg); 
+}
+.item .front {
+    /* ... */
+    /* Translate the element to the front */
+    -webkit-transform: translateZ(1px) rotateY(0deg); 
+    /* Sets the element to be hidden when rotated around */
+    -webkit-backface-visibility: hidden;
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<p>Step 4:</p>
+					<pre><code>
+.favourite-container:hover .item{
+    /* Rotate the container on hover */
+    -webkit-transform: rotateY(180deg);
+    cursor: pointer;
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Links to check out</h2>
+					<p><a href="http://tympanus.net/codrops/" target="_blank">tympanus.net/codrops</a></p>
+					<p><a href="http://codepen.io/" target="_blank">codepen.io</a></p>
+					<p><a href="http://desandro.github.io/3dtransforms/" target="_blank">Intro to 3D tranforms</a></p>
+				</section>
 			</div>
 
 		</div>

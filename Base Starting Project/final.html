@@ -125,13 +125,32 @@
         -webkit-transform: scale(1);
       }
     }
-    .favourite {
-      transition: all 1s ease;
-     // -webkit-perspective: 500px;
-      -webkit-transform: rotateY(40deg);
+    .favourite-container {
+      display: inline-block;
     }
-    .favourite:hover {
+    .favourite-container .item{
+      position: relative;
+      height: 212px;
+      transition: -webkit-transform 1s ease;
+      -webkit-perspective: 600px;
+      -webkit-transform-style: preserve-3d;   
       -webkit-transform: rotateY(0deg);
+    }
+    .item .favourite {
+      -webkit-transform: translateZ(-1px) rotateY(180deg);
+    }
+    .item .front {
+      background-color: #A8258D;
+      height: 212px;
+      width: 212px;
+      margin: 10px;
+      border-radius: 50%;
+      position: absolute;
+      -webkit-transform: translateZ(1px) rotateY(0deg);
+      -webkit-backface-visibility: hidden;
+    }
+    .favourite-container:hover .item{
+      -webkit-transform: rotateY(180deg);
       cursor: pointer;
     }
   </style>
@@ -155,10 +174,30 @@
   <section id="favourites" class="favourites box">
     <h2>My Favourite Things</h2>
     <h3>Here are a few things I really love</h3>
-    <img class="favourite" src="images/kitten.jpg">
-    <img class="favourite" src="images/kitten.jpg">
-    <img class="favourite" src="images/kitten.jpg">
-    <img class="favourite" src="images/kitten.jpg">
+    <div class="favourite-container">
+      <div class="item">
+        <div class="front"></div>
+        <img class="favourite" src="images/kitten.jpg">
+      </div>
+    </div>
+    <div class="favourite-container">
+      <div class="item">
+        <div class="front"></div>
+        <img class="favourite" src="images/kitten.jpg">
+      </div>
+    </div>
+    <div class="favourite-container">
+      <div class="item">
+        <div class="front"></div>
+        <img class="favourite" src="images/kitten.jpg">
+      </div>
+    </div>
+    <div class="favourite-container">
+      <div class="item">
+        <div class="front"></div>
+        <img class="favourite" src="images/kitten.jpg">
+      </div>
+    </div>
   </section>
   <section id="contact" class="contact box">
     <h2>Contact Me</h2>
